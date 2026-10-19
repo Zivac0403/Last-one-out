@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://civtx8f4nh3oc"]
+
+[ext_resource type="Script" uid="uid://bhde8k8oa8yv5" path="res://scripts/main_menu.gd" id="1_28flt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
+bg_color = Color(0.99999994, 0.27982193, 0.5740044, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(1, 0.28130943, 0.56974924, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(1, 0.2726589, 0.59358823, 1)
+
+[node name="Control_Menu" type="Control" unique_id=1315966267]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Background" type="ColorRect" parent="." unique_id=211258450]
+layout_mode = 0
+offset_right = 274.0
+offset_bottom = 405.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="Background" unique_id=1083384468]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ControlContainer" type="VBoxContainer" parent="Background/CenterContainer" unique_id=796411644]
+layout_mode = 2
+
+[node name="LabelLogo" type="Label" parent="Background/CenterContainer/ControlContainer" unique_id=225428345]
+layout_mode = 2
+text = "Last One Out"
+
+[node name="ButtonPlay" type="Button" parent="Background/CenterContainer/ControlContainer" unique_id=1684893348]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+text = "Play"
+
+[node name="ButtonSettings" type="Button" parent="Background/CenterContainer/ControlContainer" unique_id=829050565]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
+text = "Settings"
+
+[node name="ButtonRules" type="Button" parent="Background/CenterContainer/ControlContainer" unique_id=2018313140]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+text = "Rules"
+
+[connection signal="pressed" from="Background/CenterContainer/ControlContainer/ButtonPlay" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/ControlContainer/ButtonSettings" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/ControlContainer/ButtonRules" to="." method="_on_rules_button_pressed"]
