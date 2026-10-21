@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://ci67yy3pys84l"]
 
+[ext_resource type="Script" uid="uid://bb8q4ryucuuv5" path="res://scripts/player_setup.gd" id="1_t0o5c"]
+
 [node name="PlayerSetup" type="Control" unique_id=770935214]
 layout_mode = 3
 anchors_preset = 15
@@ -7,9 +9,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_t0o5c")
 
-[node name="Label" type="Label" parent="." unique_id=47532757]
+[node name="ButtonBack" type="Button" parent="." unique_id=1717660833]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Player Setup"
+offset_right = 23.0
+offset_bottom = 31.0
+text = "Back"
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=41530006]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1485151312]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=896214116]
+layout_mode = 2
+text = "Odaberi ime:"
+
+[node name="LineEditName" type="LineEdit" parent="CenterContainer/VBoxContainer" unique_id=2121379257]
+layout_mode = 2
+
+[node name="TextureRectAvatar" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=94018397]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=2022718871]
+layout_mode = 2
+
+[node name="ButtonPrevious" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=2005311615]
+layout_mode = 2
+text = "Previous"
+
+[node name="ButtonSelect" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=234238778]
+layout_mode = 2
+text = "Select"
+
+[node name="ButtonNext" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1836107218]
+layout_mode = 2
+text = "Next"
+
+[node name="ButtonConfirm" type="Button" parent="CenterContainer/VBoxContainer" unique_id=490184435]
+layout_mode = 2
+text = "Confirm All"
+
+[connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonConfirm" to="." method="_on_button_confirm_pressed"]
