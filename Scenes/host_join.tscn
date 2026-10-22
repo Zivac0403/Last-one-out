@@ -41,5 +41,6 @@ text = "Host"
 layout_mode = 2
 text = "Join"
 
+[connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonHost" to="." method="_on_button_host_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonJoin" to="." method="_on_button_join_pressed"]
