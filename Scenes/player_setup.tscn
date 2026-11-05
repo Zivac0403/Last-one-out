@@ -35,6 +35,11 @@ text = "Odaberi ime:"
 
 [node name="LineEditName" type="LineEdit" parent="CenterContainer/VBoxContainer" unique_id=2121379257]
 layout_mode = 2
+max_length = 16
+
+[node name="NameErrorLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=265957004]
+visible = false
+layout_mode = 2
 
 [node name="TextureRectAvatar" type="TextureRect" parent="CenterContainer/VBoxContainer" unique_id=94018397]
 layout_mode = 2
@@ -44,14 +49,12 @@ layout_mode = 2
 
 [node name="ButtonPrevious" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=2005311615]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Previous"
-
-[node name="ButtonSelect" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=234238778]
-layout_mode = 2
-text = "Select"
 
 [node name="ButtonNext" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1836107218]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Next"
 
 [node name="ButtonConfirm" type="Button" parent="CenterContainer/VBoxContainer" unique_id=490184435]
@@ -59,4 +62,7 @@ layout_mode = 2
 text = "Confirm All"
 
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="text_changed" from="CenterContainer/VBoxContainer/LineEditName" to="." method="_on_line_edit_name_text_changed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/ButtonPrevious" to="." method="_on_button_previous_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/ButtonNext" to="." method="_on_button_next_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/ButtonConfirm" to="." method="_on_button_confirm_pressed"]
