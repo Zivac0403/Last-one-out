@@ -13,7 +13,6 @@ config_version=5
 config/name="Prototip #1"
 run/main_scene="uid://civtx8f4nh3oc"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -37,6 +36,10 @@ folder_colors={
 "res://assets/": "pink",
 "res://scripts/": "green"
 }
+
+[filesystem]
+
+import/blender/enabled=false
 
 [physics]
 

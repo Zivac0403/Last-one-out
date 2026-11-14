@@ -1,15 +1,46 @@
 [gd_scene format=3 uid="uid://civtx8f4nh3oc"]
 
 [ext_resource type="Script" uid="uid://bhde8k8oa8yv5" path="res://scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="FontFile" uid="uid://kb80if38hbxw" path="res://fonts/Roboto-Bold.ttf" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://cljbp0jslbcf7" path="res://last_one_out_main_bg_720x1280.png" id="2_n45e2"]
+[ext_resource type="Texture2D" uid="uid://bsvg04mkbj6fg" path="res://last_one_out_prototip_256x256.png" id="3_ce3w2"]
+[ext_resource type="FontFile" uid="uid://t703il43rgq6" path="res://fonts/Roboto-Regular.ttf" id="4_n45e2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
-bg_color = Color(0.99999994, 0.27982193, 0.5740044, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1vivr"]
+bg_color = Color(0.93333334, 0.2, 0.18039216, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9137255, 0.9137255, 0.89411765, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
-bg_color = Color(1, 0.28130943, 0.56974924, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsffh"]
+bg_color = Color(0.93333334, 0.2, 0.18039216, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.91257113, 0.9145226, 0.8957173, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
-bg_color = Color(1, 0.2726589, 0.59358823, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5gy4"]
+bg_color = Color(0.93333334, 0.2, 0.18039216, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9137255, 0.9137255, 0.89411765, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
 
 [node name="Control_Menu" type="Control" unique_id=1315966267]
 layout_mode = 3
@@ -20,45 +51,111 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="Background" type="ColorRect" parent="." unique_id=211258450]
+[node name="Background" type="TextureRect" parent="." unique_id=1795936017]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_n45e2")
+
+[node name="Header" type="HBoxContainer" parent="Background" unique_id=385575593]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 414.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/Header" unique_id=1806280962]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+
+[node name="Titile" type="RichTextLabel" parent="Background/Header/MarginContainer" unique_id=1827515698]
+clip_contents = false
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_colors/font_outline_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+theme_override_constants/line_separation = -25
+theme_override_constants/outline_size = 37
+theme_override_fonts/normal_font = ExtResource("2_1ehe0")
+theme_override_font_sizes/normal_font_size = 101
+bbcode_enabled = true
+text = "[color=white]Last[/color]
+[color=white]One[/color]
+[color=yellow]Out[/color]
+
+"
+fit_content = true
+scroll_active = false
+vertical_alignment = 1
+
+[node name="AppLogo" type="TextureRect" parent="Background/Header" unique_id=1979483845]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_ce3w2")
+stretch_mode = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="Background" unique_id=1083384468]
+custom_minimum_size = Vector2(0, 0.7)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -110.0
+offset_right = 300.0
+offset_bottom = 339.00122
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ControlContainer" type="VBoxContainer" parent="Background/CenterContainer" unique_id=796411644]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CenterContainer" unique_id=1247869060]
 layout_mode = 2
+theme_override_constants/separation = 135
 
-[node name="LabelLogo" type="Label" parent="Background/CenterContainer/ControlContainer" unique_id=225428345]
+[node name="Label" type="Label" parent="Background/CenterContainer/VBoxContainer" unique_id=968203314]
+custom_maximum_size = Vector2(600, 600)
 layout_mode = 2
-text = "Last One Out"
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 24
+text = "Mini-game tournament. A different game every round, and the winner hands out punishments until someone blacks out."
+autowrap_mode = 3
 
-[node name="ButtonPlay" type="Button" parent="Background/CenterContainer/ControlContainer" unique_id=1684893348]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Background/CenterContainer/VBoxContainer" unique_id=621824722]
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
+theme_override_constants/separation = 40
+
+[node name="ButtonPlay" type="Button" parent="Background/CenterContainer/VBoxContainer/VBoxContainer2" unique_id=1684893348]
+custom_minimum_size = Vector2(600, 70)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1vivr")
 text = "Play"
 
-[node name="ButtonSettings" type="Button" parent="Background/CenterContainer/ControlContainer" unique_id=829050565]
+[node name="ButtonSettings" type="Button" parent="Background/CenterContainer/VBoxContainer/VBoxContainer2" unique_id=829050565]
+custom_minimum_size = Vector2(600, 70)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_fsffh")
 text = "Settings"
 
-[node name="ButtonRules" type="Button" parent="Background/CenterContainer/ControlContainer" unique_id=2018313140]
+[node name="ButtonRules" type="Button" parent="Background/CenterContainer/VBoxContainer/VBoxContainer2" unique_id=2018313140]
+custom_minimum_size = Vector2(600, 70)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ehe0")
+theme_override_fonts/font = ExtResource("4_n45e2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_v5gy4")
 text = "Rules"
 
-[connection signal="pressed" from="Background/CenterContainer/ControlContainer/ButtonPlay" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Background/CenterContainer/ControlContainer/ButtonSettings" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Background/CenterContainer/ControlContainer/ButtonRules" to="." method="_on_rules_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/VBoxContainer2/ButtonPlay" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/VBoxContainer2/ButtonSettings" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Background/CenterContainer/VBoxContainer/VBoxContainer2/ButtonRules" to="." method="_on_rules_button_pressed"]
